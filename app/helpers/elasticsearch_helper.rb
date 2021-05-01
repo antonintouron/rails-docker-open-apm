@@ -1,0 +1,2 @@
+module ElasticsearchHelper
+end

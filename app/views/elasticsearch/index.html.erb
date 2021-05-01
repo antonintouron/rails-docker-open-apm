@@ -1,0 +1,11 @@
+<h1>ES data <%= @results['hits']['total']['value'] %> values in index (1000 data limit in page) : </h1>
+
+<% @results['hits']['hits'].each do |data| %>
+  <ul>
+    <li>ID : <%= data['_id'] %></li>
+    <li>First name : <%= data['_source']['first_name'] %></li>
+    <li>Last name : <%= data['_source']['last_name'] %></li>
+    <li>Country : <%= data['_source']['county'] %></li>
+    <li>Age : <%= data['_source']['age'] %></li>
+  </ul>
+<% end %>

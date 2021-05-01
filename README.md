@@ -9,11 +9,17 @@
 * Run `docker-compose up -d` (wait 1 minute after)
 * Check if containers are running with `docker ps` (container postgres & web)
 * Run `docker-compose run web rails db:create` to create postgres database
+* Go to app in `localhost:3000`
+
+# Add fake
+
+* Run `docker-compose exec web rails create_data_elasticsearch:process` (Run rake task => /lib/task)
+* Index is `index01`
+* Test if data is on elasticsearch, go to `localhost:3000/es`
+
+# Run APM
+
 * Go to Elastic web interface in `http://localhost:5601/app/home#/tutorial/apm` :
   * In APM Server, check APM Server status
   * In APM Agents, Load Kibana objects
   * Launch APM
-
-# Fake data
-
-* Run `docker-compose exec web rails create_data_elasticsearch:process` (Run rake task => /lib/task)
