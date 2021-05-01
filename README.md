@@ -6,12 +6,12 @@
 # Installation
 
 * Run `docker-compose build` (build is low, ~ 300 seconds)
-* Run `docker-compose up -d` (wait 1 minute after)
-* Check if containers are running with `docker ps` (container postgres & web)
+* Run `docker-compose up -d`
+* Wait `20 seconds`
 * Run `docker-compose run web rails db:create` to create postgres database
 * Go to app in `localhost:3000`
 
-# Add fake
+# Add fake data
 
 * Run `docker-compose exec web rails create_data_elasticsearch:process` (Run rake task => /lib/task)
 * Index is `index01`
