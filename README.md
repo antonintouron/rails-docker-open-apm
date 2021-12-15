@@ -21,7 +21,7 @@ The docker-compose file :
 
 * Run `docker-compose build` (build is low, ~ 300 seconds)
 * Run `docker-compose up -d`
-* Wait `20 seconds`
+* Wait `20 seconds` (rails need time to start)
 * Run `docker-compose run web rails db:create` to create postgresql database
 * Go to app in `localhost:3000` => Yeah it's rails !
 
@@ -29,7 +29,7 @@ The docker-compose file :
 
 * Run `docker-compose exec web rails create_data_elasticsearch:process` (Run rake task => /lib/task)
 * Index is `index01`
-* Test if data is on elasticsearch, go to `localhost:3000/es`
+* Test if data is on elasticsearch, go to `localhost:3000/es` (if you are error with webpack run `docker-compose run web rails webpacker:install` and override configuration)
 
 # Run APM
 
